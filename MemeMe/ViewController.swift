@@ -204,10 +204,11 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         let memeImage = self.generateMemedImage()
         let activityItems = [memeImage]
         let activityView = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
-        self.presentViewController(activityView, animated: true) { 
+        activityView.completionWithItemsHandler = {
+            (activity, success, items, error) in
             self.save()
-            // self.dismissViewControllerAnimated(true, completion: nil)
-        }
+            }
+        self.presentViewController(activityView, animated: true, completion: nil)
     }
     
 
