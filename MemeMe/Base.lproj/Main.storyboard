@@ -108,11 +108,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="2SJ-CM-WmW" id="bc1-bL-ium"/>
+                        <outlet property="bottomToolbar" destination="9po-FL-8hO" id="vlx-iY-9pN"/>
                         <outlet property="cameraButton" destination="o53-W2-LzX" id="cjS-WO-LIc"/>
                         <outlet property="imagePickerView" destination="Hdx-BC-edU" id="rqt-Zz-Kb7"/>
                         <outlet property="shareButton" destination="Nur-Yi-45V" id="UWs-wp-5w1"/>
                         <outlet property="topTextField" destination="S3D-pa-fyf" id="mbY-pM-Yek"/>
-                        <outlet property="topToolbar" destination="9LZ-OX-BOD" id="38D-2J-Ydu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

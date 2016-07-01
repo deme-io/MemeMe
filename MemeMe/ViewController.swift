@@ -18,10 +18,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
-    @IBOutlet weak var topToolbar: UINavigationItem!
-    
-    var topEditCount = 0
-    var bottomEditCount = 0
+    @IBOutlet weak var bottomToolbar: UIToolbar!
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -41,10 +38,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         super.viewDidLoad()
         
         self.formatTextField(topTextField, defaultText: "TOP")
-        topTextField.tag = 0
-        
         self.formatTextField(bottomTextField, defaultText: "BOTTOM")
-        bottomTextField.tag = 1
     }
     
     
@@ -181,7 +175,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     // MARK: Generate and Save Meme Functions
     
     func save() {
-        let newMeme = Meme.init(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: generateMemedImage())
+        let meme = Meme.init(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: generateMemedImage())
         
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
@@ -192,6 +186,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     func generateMemedImage() -> UIImage {
         
         self.navigationController?.navigationBarHidden = true
+        bottomToolbar.hidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
@@ -199,6 +194,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         UIGraphicsEndImageContext()
         
         self.navigationController?.navigationBarHidden = false
+        bottomToolbar.hidden = false
         
         return memedImage
     }
@@ -219,8 +215,6 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         imagePickerView.image = nil
-        topEditCount = 0
-        bottomEditCount = 0
     }
 
 }
