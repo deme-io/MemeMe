@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q3O-AO-rSY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="w2R-2w-5Cf">
+            <objects>
+                <navigationController id="Q3O-AO-rSY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a7P-kq-Y1t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EeN-aK-EaX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znY-MS-uuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="-113"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,11 +33,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hdx-BC-edU">
-                                <rect key="frame" x="180" y="139" width="240" height="239"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="MOb-9G-mcP"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hdx-BC-edU">
+                                <rect key="frame" x="180" y="174" width="240" height="239"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9po-FL-8hO">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
@@ -41,38 +54,10 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Sk0-P5-kJT"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S3D-pa-fyf">
-                                <rect key="frame" x="180" y="86" width="240" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="EVM-Ah-hvF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3U5-oW-tcR"/>
-                                </connections>
-                            </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nj2-Z6-1dz">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <items>
-                                    <navigationItem id="IY6-IO-ZWf">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Nur-Yi-45V">
-                                            <connections>
-                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="M88-Go-ScX"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="I93-qk-yIQ">
-                                            <connections>
-                                                <action selector="cancel:" destination="BYZ-38-t0r" id="nAg-a2-YAy"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2SJ-CM-WmW">
-                                <rect key="frame" x="180" y="396" width="240" height="47"/>
+                                <rect key="frame" x="180" y="431" width="240" height="47"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="XQi-E6-Lfs"/>
+                                    <constraint firstAttribute="height" constant="47" id="wDC-IM-iXa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -80,37 +65,59 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="HQ3-eg-5bv"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S3D-pa-fyf">
+                                <rect key="frame" x="180" y="112" width="240" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="hnu-6Z-DmU"/>
+                                    <constraint firstAttribute="height" constant="45" id="nXk-uS-UgB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3U5-oW-tcR"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9po-FL-8hO" firstAttribute="centerX" secondItem="Hdx-BC-edU" secondAttribute="centerX" id="3Ie-sW-A8s"/>
-                            <constraint firstItem="2SJ-CM-WmW" firstAttribute="leading" secondItem="Hdx-BC-edU" secondAttribute="leading" id="GNZ-aj-gTY"/>
-                            <constraint firstItem="S3D-pa-fyf" firstAttribute="trailing" secondItem="Hdx-BC-edU" secondAttribute="trailing" id="HEX-pB-FQo"/>
-                            <constraint firstItem="Nj2-Z6-1dz" firstAttribute="leading" secondItem="9po-FL-8hO" secondAttribute="leading" id="HQP-Y9-CJh"/>
-                            <constraint firstItem="Hdx-BC-edU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="119" id="HeJ-Tn-koE"/>
-                            <constraint firstItem="Nj2-Z6-1dz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Ie2-D1-fp6"/>
-                            <constraint firstItem="Nj2-Z6-1dz" firstAttribute="trailing" secondItem="9po-FL-8hO" secondAttribute="trailing" id="Kzr-KM-Q4c"/>
-                            <constraint firstItem="Hdx-BC-edU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OIC-98-RZM"/>
-                            <constraint firstItem="S3D-pa-fyf" firstAttribute="leading" secondItem="Hdx-BC-edU" secondAttribute="leading" id="aHN-JG-hsp"/>
-                            <constraint firstItem="2SJ-CM-WmW" firstAttribute="top" secondItem="Hdx-BC-edU" secondAttribute="bottom" constant="18" id="bDJ-ni-pd0"/>
-                            <constraint firstItem="9po-FL-8hO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="czf-CV-Sw1"/>
-                            <constraint firstItem="Hdx-BC-edU" firstAttribute="top" secondItem="S3D-pa-fyf" secondAttribute="bottom" constant="8" symbolic="YES" id="hwh-GX-OTh"/>
-                            <constraint firstItem="2SJ-CM-WmW" firstAttribute="trailing" secondItem="Hdx-BC-edU" secondAttribute="trailing" id="mTF-4f-qJq"/>
-                            <constraint firstItem="9po-FL-8hO" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="t7C-GJ-XeB"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hdx-BC-edU" secondAttribute="bottom" constant="222" id="uwy-xX-Fpf"/>
+                            <constraint firstItem="9po-FL-8hO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1cy-So-H1S"/>
+                            <constraint firstItem="2SJ-CM-WmW" firstAttribute="top" secondItem="Hdx-BC-edU" secondAttribute="bottom" constant="18" id="71N-gC-oGM"/>
+                            <constraint firstItem="Hdx-BC-edU" firstAttribute="trailing" secondItem="2SJ-CM-WmW" secondAttribute="trailing" id="HXi-8L-dPe"/>
+                            <constraint firstItem="9po-FL-8hO" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="HkO-J4-lVj"/>
+                            <constraint firstItem="S3D-pa-fyf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SiP-sp-AfZ"/>
+                            <constraint firstItem="9po-FL-8hO" firstAttribute="top" secondItem="2SJ-CM-WmW" secondAttribute="bottom" constant="78" id="ViU-E5-kb3"/>
+                            <constraint firstItem="9po-FL-8hO" firstAttribute="centerX" secondItem="2SJ-CM-WmW" secondAttribute="centerX" id="aUb-gA-bZk"/>
+                            <constraint firstItem="S3D-pa-fyf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="duZ-OR-s8W"/>
+                            <constraint firstItem="Hdx-BC-edU" firstAttribute="top" secondItem="S3D-pa-fyf" secondAttribute="bottom" constant="17" id="rCa-X6-mOH"/>
+                            <constraint firstItem="S3D-pa-fyf" firstAttribute="leading" secondItem="Hdx-BC-edU" secondAttribute="leading" id="rT3-7m-eac"/>
+                            <constraint firstItem="Hdx-BC-edU" firstAttribute="leading" secondItem="2SJ-CM-WmW" secondAttribute="leading" id="wBf-jT-6fH"/>
+                            <constraint firstItem="S3D-pa-fyf" firstAttribute="trailing" secondItem="Hdx-BC-edU" secondAttribute="trailing" id="ywh-af-uRu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9LZ-OX-BOD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Nur-Yi-45V">
+                            <connections>
+                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="M88-Go-ScX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="I93-qk-yIQ">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="nAg-a2-YAy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="2SJ-CM-WmW" id="bc1-bL-ium"/>
                         <outlet property="cameraButton" destination="o53-W2-LzX" id="cjS-WO-LIc"/>
                         <outlet property="imagePickerView" destination="Hdx-BC-edU" id="rqt-Zz-Kb7"/>
                         <outlet property="shareButton" destination="Nur-Yi-45V" id="UWs-wp-5w1"/>
                         <outlet property="topTextField" destination="S3D-pa-fyf" id="mbY-pM-Yek"/>
+                        <outlet property="topToolbar" destination="9LZ-OX-BOD" id="38D-2J-Ydu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="362"/>
+            <point key="canvasLocation" x="424" y="-113"/>
         </scene>
     </scenes>
 </document>

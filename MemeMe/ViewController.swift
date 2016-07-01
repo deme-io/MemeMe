@@ -18,6 +18,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var topToolbar: UINavigationItem!
     
     var topEditCount = 0
     var bottomEditCount = 0
@@ -28,14 +29,6 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSStrokeWidthAttributeName : 4
     ]
-    
-    
-    struct Meme {
-        let textField1: String
-        let textField2: String
-        let image: UIImage
-        let memedImage: UIImage
-    }
     
     
     
@@ -121,16 +114,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     // MARK: TextField Functions
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        if textField.tag == 0 {
-            if topEditCount == 0 {
-                textField.text = ""
-                topEditCount = topEditCount + 1
-            }
-        } else if textField.tag == 1 {
-            if bottomEditCount == 0 {
-                textField.text = ""
-                bottomEditCount = topEditCount + 1
-            }
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
         }
     }
     
@@ -169,12 +154,16 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     
     func keyboardWillShow(notification: NSNotification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomTextField.isFirstResponder() {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     
     func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y += getKeyboardHeight(notification)
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y += getKeyboardHeight(notification)
+        }
     }
     
     
@@ -192,14 +181,17 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     // MARK: Generate and Save Meme Functions
     
     func save() {
-        _ = Meme.init(textField1: self.topTextField.text!, textField2: self.bottomTextField.text!, image: self.imagePickerView.image!, memedImage: self.generateMemedImage())
+        let newMeme = Meme.init(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: generateMemedImage())
+        
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     
     func generateMemedImage() -> UIImage {
         
         self.navigationController?.navigationBarHidden = true
-        self.navigationController?.toolbarHidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
