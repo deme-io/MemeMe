@@ -33,8 +33,8 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.formatTextField(topTextField, defaultText: "TOP")
-        self.formatTextField(bottomTextField, defaultText: "BOTTOM")
+        formatTextField(topTextField, defaultText: "TOP")
+        formatTextField(bottomTextField, defaultText: "BOTTOM")
         imagePickerView.contentMode = .ScaleAspectFit
     }
     
@@ -64,12 +64,12 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     // MARK: Image Functions
     
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
-        self.presentImagePicker(.PhotoLibrary)
+        presentImagePicker(.PhotoLibrary)
     }
     
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
-        self.presentImagePicker(.Camera)
+        presentImagePicker(.Camera)
     }
     
     
@@ -167,7 +167,7 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     
     func generateMemedImage() -> UIImage {
         
-        self.navigationController?.navigationBarHidden = true
+        navigationController?.navigationBarHidden = true
         bottomToolbar.hidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -175,7 +175,7 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        self.navigationController?.navigationBarHidden = false
+        navigationController?.navigationBarHidden = false
         bottomToolbar.hidden = false
         
         return memedImage
@@ -193,7 +193,7 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
-        self.presentViewController(activityView, animated: true, completion: nil)
+        presentViewController(activityView, animated: true, completion: nil)
     }
     
 
