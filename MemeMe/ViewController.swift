@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
+class MemeEditorViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
 
     
     // MARK: Properties
@@ -24,12 +24,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 4
+        NSStrokeWidthAttributeName : -3.6
     ]
-    
-    
-    
-    
     
 
     // MARK: Default Functions
@@ -39,6 +35,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         
         self.formatTextField(topTextField, defaultText: "TOP")
         self.formatTextField(bottomTextField, defaultText: "BOTTOM")
+        imagePickerView.contentMode = .ScaleAspectFit
     }
     
     
@@ -61,10 +58,6 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
-    
-    
-    
-    
     
     
     
@@ -102,9 +95,6 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     
     
-    
-    
-    
     // MARK: TextField Functions
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -129,15 +119,12 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     
     
-    
-    
-    
     // MARK: Keyboard Functions
     
     func subscribeToKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     
@@ -149,15 +136,13 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = getKeyboardHeight(notification) * (-1)
         }
     }
     
     
     func keyboardWillHide(notification: NSNotification) {
-        if view.frame.origin.y != 0 {
-            view.frame.origin.y += getKeyboardHeight(notification)
-        }
+        view.frame.origin.y = 0
     }
     
     
@@ -166,9 +151,6 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
     }
-    
-    
-    
     
     
     
@@ -206,8 +188,11 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         let activityView = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
         activityView.completionWithItemsHandler = {
             (activity, success, items, error) in
-            self.save()
+            if success {
+                self.save()
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
+        }
         self.presentViewController(activityView, animated: true, completion: nil)
     }
     
@@ -216,6 +201,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         imagePickerView.image = nil
+        shareButton.enabled = false
     }
 
 }
