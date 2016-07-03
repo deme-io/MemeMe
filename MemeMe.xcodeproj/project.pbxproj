@@ -15,6 +15,8 @@
 		4540D1FB1C7A4C1E000FA560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4540D1F91C7A4C1E000FA560 /* LaunchScreen.storyboard */; };
 		4540D2061C7A4C1F000FA560 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540D2051C7A4C1F000FA560 /* MemeMeTests.swift */; };
 		4540D2111C7A4C1F000FA560 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540D2101C7A4C1F000FA560 /* MemeMeUITests.swift */; };
+		4598537B1D297436009E20DB /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598537A1D297436009E20DB /* SentMemesCollectionViewController.swift */; };
+		4598537D1D297448009E20DB /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598537C1D297448009E20DB /* SentMemesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4540D20C1C7A4C1F000FA560 /* MemeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4540D2101C7A4C1F000FA560 /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		4540D2121C7A4C1F000FA560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4598537A1D297436009E20DB /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
+		4598537C1D297448009E20DB /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				4540D1F01C7A4C1E000FA560 /* AppDelegate.swift */,
 				4540D1F21C7A4C1E000FA560 /* MemeEditorViewController.swift */,
+				4598537A1D297436009E20DB /* SentMemesCollectionViewController.swift */,
+				4598537C1D297448009E20DB /* SentMemesTableViewController.swift */,
 				4540D1F41C7A4C1E000FA560 /* Main.storyboard */,
 				4540D1F71C7A4C1E000FA560 /* Assets.xcassets */,
 				4540D1F91C7A4C1E000FA560 /* LaunchScreen.storyboard */,
@@ -266,6 +272,8 @@
 			files = (
 				450AC4301D271CD4007B3B25 /* Meme.swift in Sources */,
 				4540D1F31C7A4C1E000FA560 /* MemeEditorViewController.swift in Sources */,
+				4598537B1D297436009E20DB /* SentMemesCollectionViewController.swift in Sources */,
+				4598537D1D297448009E20DB /* SentMemesTableViewController.swift in Sources */,
 				4540D1F11C7A4C1E000FA560 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
