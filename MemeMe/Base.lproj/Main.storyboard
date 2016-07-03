@@ -20,7 +20,39 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znY-MS-uuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2370" y="728"/>
+            <point key="canvasLocation" x="2308" y="728"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="1hT-oC-lQ5">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="Fvc-wl-Ubu" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eQH-gT-IBZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hWb-Sc-IYz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WYY-nG-Iym">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTv-Pp-mSK">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hWb-Sc-IYz" firstAttribute="top" secondItem="VTv-Pp-mSK" secondAttribute="bottom" constant="44" id="37u-Xz-6lk"/>
+                            <constraint firstAttribute="trailing" secondItem="VTv-Pp-mSK" secondAttribute="trailing" id="awf-8S-xu6"/>
+                            <constraint firstItem="VTv-Pp-mSK" firstAttribute="leading" secondItem="WYY-nG-Iym" secondAttribute="leading" id="fQF-Wf-zom"/>
+                            <constraint firstItem="VTv-Pp-mSK" firstAttribute="top" secondItem="eQH-gT-IBZ" secondAttribute="bottom" constant="44" id="iAI-SB-qXb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="memedImage" destination="VTv-Pp-mSK" id="hrC-Rp-e9b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="op7-28-y9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302" y="-18"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="62b-s7-hji">
@@ -59,7 +91,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dXd-AY-jcH">
                                             <rect key="frame" x="8" y="5" width="148" height="105"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="148" id="hyU-Y8-Jzx"/>
+                                                <constraint firstAttribute="width" constant="148" id="nj4-IP-djr"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAw-Uq-ZZ7">
@@ -79,16 +111,16 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="dXd-AY-jcH" firstAttribute="centerY" secondItem="QtH-v4-eRh" secondAttribute="centerY" id="36D-No-OBr"/>
                                         <constraint firstItem="aEZ-19-miY" firstAttribute="top" secondItem="hAw-Uq-ZZ7" secondAttribute="bottom" constant="20" id="39X-Id-iaN"/>
-                                        <constraint firstItem="hAw-Uq-ZZ7" firstAttribute="leading" secondItem="dXd-AY-jcH" secondAttribute="trailing" constant="8" symbolic="YES" id="6cO-Rb-5Ow"/>
+                                        <constraint firstItem="dXd-AY-jcH" firstAttribute="bottom" secondItem="aEZ-19-miY" secondAttribute="bottom" id="52F-vy-ada"/>
                                         <constraint firstItem="hAw-Uq-ZZ7" firstAttribute="leading" secondItem="aEZ-19-miY" secondAttribute="leading" id="E07-C4-C1Q"/>
+                                        <constraint firstItem="hAw-Uq-ZZ7" firstAttribute="leading" secondItem="dXd-AY-jcH" secondAttribute="trailing" constant="8" symbolic="YES" id="Kr1-sI-2tf"/>
                                         <constraint firstItem="hAw-Uq-ZZ7" firstAttribute="top" secondItem="QtH-v4-eRh" secondAttribute="topMargin" id="TZq-sx-Hlg"/>
                                         <constraint firstItem="hAw-Uq-ZZ7" firstAttribute="trailing" secondItem="aEZ-19-miY" secondAttribute="trailing" id="Wqc-LP-DS3"/>
-                                        <constraint firstItem="dXd-AY-jcH" firstAttribute="centerY" secondItem="QtH-v4-eRh" secondAttribute="centerY" id="aMK-6P-e7c"/>
                                         <constraint firstItem="hAw-Uq-ZZ7" firstAttribute="trailing" secondItem="QtH-v4-eRh" secondAttribute="trailingMargin" id="cCJ-91-2cI"/>
-                                        <constraint firstItem="dXd-AY-jcH" firstAttribute="bottom" secondItem="aEZ-19-miY" secondAttribute="bottom" id="g5N-uQ-Dc4"/>
-                                        <constraint firstItem="dXd-AY-jcH" firstAttribute="leading" secondItem="QtH-v4-eRh" secondAttribute="leadingMargin" id="hDm-fT-jie"/>
-                                        <constraint firstItem="dXd-AY-jcH" firstAttribute="top" secondItem="QtH-v4-eRh" secondAttribute="topMargin" constant="-3" id="mDC-aZ-gxw"/>
+                                        <constraint firstItem="dXd-AY-jcH" firstAttribute="leading" secondItem="QtH-v4-eRh" secondAttribute="leadingMargin" id="mt3-DZ-BKl"/>
+                                        <constraint firstItem="dXd-AY-jcH" firstAttribute="top" secondItem="QtH-v4-eRh" secondAttribute="topMargin" constant="-3" id="vCt-7f-VxQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -289,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3082" y="728"/>
+            <point key="canvasLocation" x="3020" y="728"/>
         </scene>
     </scenes>
     <resources>
