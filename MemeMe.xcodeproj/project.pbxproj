@@ -17,6 +17,7 @@
 		4540D2111C7A4C1F000FA560 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540D2101C7A4C1F000FA560 /* MemeMeUITests.swift */; };
 		4598537B1D297436009E20DB /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598537A1D297436009E20DB /* SentMemesCollectionViewController.swift */; };
 		4598537D1D297448009E20DB /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4598537C1D297448009E20DB /* SentMemesTableViewController.swift */; };
+		459853811D29987B009E20DB /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459853801D29987B009E20DB /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		4540D2121C7A4C1F000FA560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4598537A1D297436009E20DB /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		4598537C1D297448009E20DB /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
+		459853801D29987B009E20DB /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				4598537A1D297436009E20DB /* SentMemesCollectionViewController.swift */,
 				4598537C1D297448009E20DB /* SentMemesTableViewController.swift */,
 				4540D1F41C7A4C1E000FA560 /* Main.storyboard */,
+				459853801D29987B009E20DB /* ListTableViewCell.swift */,
 				4540D1F71C7A4C1E000FA560 /* Assets.xcassets */,
 				4540D1F91C7A4C1E000FA560 /* LaunchScreen.storyboard */,
 				4540D1FC1C7A4C1E000FA560 /* Info.plist */,
@@ -275,6 +278,7 @@
 				4598537B1D297436009E20DB /* SentMemesCollectionViewController.swift in Sources */,
 				4598537D1D297448009E20DB /* SentMemesTableViewController.swift in Sources */,
 				4540D1F11C7A4C1E000FA560 /* AppDelegate.swift in Sources */,
+				459853811D29987B009E20DB /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
