@@ -18,7 +18,6 @@ class SentMemesTableViewController: UITableViewController, UINavigationControlle
         super.viewDidAppear(animated)
         
         tableView.reloadData()
-        print(memes)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

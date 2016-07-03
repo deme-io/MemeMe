@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wV8-zu-dha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wV8-zu-dha">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -53,7 +53,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RuN-FL-UsU" id="QtH-v4-eRh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="115"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dXd-AY-jcH">
@@ -67,13 +67,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="41" id="KoL-M6-ybi"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-19-miY">
                                             <rect key="frame" x="164" y="69" width="428" height="41"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -93,8 +93,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bottomLabel" destination="aEZ-19-miY" id="6dj-oY-PvK"/>
-                                    <outlet property="imageView" destination="dXd-AY-jcH" id="2Oa-6Y-jYG"/>
-                                    <outlet property="memeImage" destination="QtH-v4-eRh" id="kmY-G8-dOw"/>
                                     <outlet property="memedImage" destination="dXd-AY-jcH" id="ciM-NV-A9B"/>
                                     <outlet property="topLabel" destination="hAw-Uq-ZZ7" id="eVQ-Hx-std"/>
                                 </connections>
