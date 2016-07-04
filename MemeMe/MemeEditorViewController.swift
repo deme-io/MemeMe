@@ -27,6 +27,8 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         NSStrokeWidthAttributeName : -3.6
     ]
     
+    
+    
 
     // MARK: Default Functions
     
@@ -58,6 +60,8 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
+    
+    
     
     
     
@@ -95,6 +99,8 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     
     
     
+    
+    
     // MARK: TextField Functions
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -116,6 +122,8 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         textField.resignFirstResponder()
         return true
     }
+    
+    
     
     
     
@@ -151,6 +159,8 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
     }
+    
+    
     
     
     

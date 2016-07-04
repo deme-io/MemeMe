@@ -10,6 +10,7 @@ import UIKit
 
 class SentMemesTableViewController: UITableViewController, UINavigationControllerDelegate {
     
+    // MARK: Properties
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
@@ -20,6 +21,10 @@ class SentMemesTableViewController: UITableViewController, UINavigationControlle
         tableView.reloadData()
     }
     
+    
+    
+    
+    // MARK: Table View Functions
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
     }

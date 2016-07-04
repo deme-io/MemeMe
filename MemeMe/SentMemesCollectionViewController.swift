@@ -10,12 +10,15 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    // MARK: Properties
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     
+    
+    // MARK: Default Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +37,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
         collectionView?.reloadData()
     }
     
+    
+    
+    
+    // MARK: Collection View Functions
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -41,9 +48,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
         let meme = memes[indexPath.item]
-        
-        //cell.topLabel.text = meme.topText
-        //cell.bottomLabel.text = meme.bottomText
         
         cell.formatLabel(cell.topLabel, defaultText: meme.topText)
         cell.formatLabel(cell.bottomLabel, defaultText: meme.bottomText)
