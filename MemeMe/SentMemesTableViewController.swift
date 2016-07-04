@@ -30,7 +30,9 @@ class SentMemesTableViewController: UITableViewController, UINavigationControlle
         
         cell.topLabel.text = meme.topText
         cell.bottomLabel.text = meme.bottomText
-        cell.memedImage.image = meme.memedImage
+        cell.memedImage.image = meme.image
+        cell.formatLabel(cell.topImageLabel, defaultText: meme.topText)
+        cell.formatLabel(cell.bottomImageLabel, defaultText: meme.bottomText)
         
         return cell
     }

@@ -22,8 +22,6 @@ class CollectionViewCell: UICollectionViewCell {
     ]
     
     func formatLabel(label: UILabel, defaultText: String) {
-        //label.textAlignment = NSTextAlignment.Center
         label.attributedText = NSAttributedString.init(string: defaultText, attributes: memeTextAttributes)
-        //label.text = defaultText
     }
 }
